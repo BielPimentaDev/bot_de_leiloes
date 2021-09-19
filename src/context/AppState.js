@@ -3,18 +3,19 @@ import axios from 'axios';
 import AppContext from './AppContext';
 
 const AppState = (props) => {
-	const apiUrl = 'http://localhost:9000';
+	const apiUrl = 'http://192.168.15.47:5000/';
 	const [getObject, setGetObject] = useState({
 		state_city: '',
 	});
 
 	const callApi = async () => {
 		try {
-			// const results = axios.get(`${apiUrl}/results/`, {
-			// 	params: { state_city: getObject.state_city },
-			// });
-			// return results;
-			console.log(getObject.state_city);
+			if (getObject.state_city !== '') {
+				const results = await axios.get(`${apiUrl}/`, {
+					params: { state_city: getObject.state_city },
+				});
+				return results;
+			}
 		} catch (e) {
 			console.log(e);
 		}

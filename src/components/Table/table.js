@@ -3,7 +3,7 @@ import ClipLoader from 'react-spinners/ClipLoader';
 import { Table } from 'react-bootstrap';
 import './table.css';
 import { useHistory } from 'react-router-dom';
-import { FaAngleDoubleLeft } from 'react-icons/fa';
+import { FaAngleDoubleLeft, FaDownload } from 'react-icons/fa';
 import { Form, Navbar, Button } from 'react-bootstrap';
 import AppContext from '../../context/AppContext';
 import MOCK_DATA from './jobs.json';
@@ -15,16 +15,16 @@ export const FilteringTable = () => {
 	const [data, setData] = useState({});
 
 	const appContext = useContext(AppContext);
-	const { callApi } = appContext;
+	const { callApi, getObject } = appContext;
 
 	useEffect(() => {
 		async function fetchData() {
 			const results = await callApi();
 
-			setTimeout(() => {
-				setLoading(false);
-			}, 1000);
-			setData(MOCK_DATA);
+			console.log(results.data.data);
+
+			setData(results.data.data);
+			setLoading(false);
 		}
 
 		fetchData();
@@ -48,8 +48,16 @@ export const FilteringTable = () => {
 						<button className='back-button' onClick={goBack}>
 							<FaAngleDoubleLeft size={25} />
 						</button>
+
 						<Navbar.Collapse className='justify-content-center'>
-							<label className='label-search'>RESULTADO DA BUSCA</label>
+							<label className='label-search'>
+								{getObject.state_city.toUpperCase()}
+							</label>
+						</Navbar.Collapse>
+						<Navbar.Collapse className='justify-content-end'>
+							<button className='back-button' onClick={goBack}>
+								<FaDownload size={25} />
+							</button>
 						</Navbar.Collapse>
 					</Navbar>
 
@@ -58,19 +66,15 @@ export const FilteringTable = () => {
 							<thead>
 								<tr>
 									<th>
-										Vaga
+										Site
 										<br />
 									</th>
 									<th>
-										Empresa
+										Categoria
 										<br />
 									</th>
 									<th>
-										Local
-										<br />
-									</th>
-									<th>
-										Data
+										Preço
 										<br />
 									</th>
 									<th>
@@ -82,20 +86,15 @@ export const FilteringTable = () => {
 							<tbody>
 								{data.map((row, i) => (
 									<tr key={i}>
-										<td className='label-info'>{row.job}</td>
+										<td className='label-info'>{row.site}</td>
 
-										<td className='label-info'>{row.employer}</td>
+										<td className='label-info'>{row.category}</td>
 
-										<td className='label-info'>{row.local}</td>
-
-										<td className='label-info'>{row.date}</td>
+										<td className='label-info'>{row.price}</td>
 
 										<td>
-											<a
-												href={row.link}
-												target='_blank'
-												title={row.description}>
-												<button className='td-button'>VISUALIZAR VAGA</button>
+											<a href={row.url} target='_blank' title={row.description}>
+												<button className='td-button'>VISUALIZAR IMÓVEL</button>
 											</a>
 										</td>
 									</tr>
