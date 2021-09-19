@@ -1,0 +1,61 @@
+.box {
+	height: 350px;
+}
+
+.box2 {
+	height: 150px;
+}
+
+body {
+	position: relative;
+}
+
+.toast-fixed {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	min-width: 200px;
+}
+
+.button-react {
+	background-color: #f48b05;
+	position: absolute;
+	right: 30px;
+}
+
+.button-react:hover {
+	background-color: #fff;
+	color: #f48b05;
+}
+
+.footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 50px;
+}
+
+.div-header {
+	width: 100%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.div-svg {
+	height: 30px;
+	width: 30px;
+	padding: 0 20px;
+}
+
+.loading-screen {
+	text-align: center;
+	background-color: #17a2b8;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+}

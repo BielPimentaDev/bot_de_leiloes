@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+/* table {
+    margin-top:30px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width:100%;
+  }
+  
+  table td {    
+    border-style: none;
+    border-right: 1px solid #ddd;    
+    padding: 4px;   
+    text-align: center;
+    vertical-align: middle !important;
+    color:#656565;
+    font-size: 21px;
+  } 
+ 
+  
+  table th {
+    padding: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    color: #000;
+    border-right: 1px solid #ddd;
+    font-size: 20px;
+  }
+  table tr{
+    border-top: 10px solid #17A2B8;
+    
+  }
+  */
+
+.label-info {
+	border-style: none;
+	text-align: center;
+	color: #656565;
+	font-size: 21px;
+}
+
+.label-search {
+	display: flex;
+	justify-content: center;
+	font-size: 45px;
+	color: #17a2b8;
+	font-weight: bold;
+}
+
+.td-button {
+	display: inline-block;
+	width: 100px;
+	height: 48px;
+	background-color: #f86440;
+	color: #fff;
+	border: none;
+	border-radius: 7px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	font-size: 15px;
+}
+
+.td-button:hover {
+	background-color: white;
+	color: #f86440;
+	border: 1px solid #f86440;
+}
+
+.desc-wr {
+	/* max-height: 20px; */
+	/* max-width: 500px; */
+	/* overflow: hidden; */
+	/* text-overflow: ellipsis; */
+	/* white-space: nowrap; */
+}
+
+.table-fixed {
+	/* margin-left: 40px; */
+	/* margin-right: 40px; */
+	/* margin-top: 10rem; */
+}
+
+.table-fixed thead,
+.table-fixed thead > th {
+	background: #17a2b8;
+	color: #fff;
+}
+
+.table-fixed tbody tr td {
+	background: #fff;
+}
+
+.table-fixed > thead > tr > th {
+	border: 0 !important;
+}
+
+.table-fixed > tbody > tr > td:last-child {
+	border-right: 0;
+}
+
+.table-fixed tbody td,
+.table-fixed thead > tr > th {
+	float: left;
+	font-size: 14px;
+	/* padding-left: 20px !important; */
+}
+
+.table-fixed th,
+.table-fixed td {
+	text-align: center;
+	width: 20%;
+}
+
+td {
+	max-height: 73px;
+}
+
+th {
+	margin-left: -3px;
+}
+
+.table-fixed tbody {
+	display: block;
+	height: 70vh;
+	overflow-y: auto;
+}
+
+.table-fixed tr {
+	display: block;
+}
+
+.div-table {
+	margin-left: 40px;
+	margin-right: 40px;
+}
+
+.loading-screen {
+	text-align: center;
+	background-color: #17a2b8;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+}
+
+.back-button {
+	margin-top: 10px;
+	margin-left: 30px;
+	display: inline-block;
+	width: 70px;
+	height: 70px;
+	background-color: #8e99a4;
+	color: #fff;
+	border: none;
+	border-radius: 50%;
+	transition-duration: 0.4s;
+	cursor: pointer;
+}
+
+.back-button:hover {
+	background-color: white;
+	color: #8e99a4;
+	border: 1px solid #8e99a4;
+}
+
+.label-new-consult {
+	margin-left: 10px;
+}
