@@ -3,7 +3,8 @@ import ClipLoader from 'react-spinners/ClipLoader';
 import { Table } from 'react-bootstrap';
 import './table.css';
 import { useHistory } from 'react-router-dom';
-import { FaAngleDoubleLeft, FaDownload } from 'react-icons/fa';
+import { FaAngleDoubleLeft } from 'react-icons/fa';
+import { BsDownload } from 'react-icons/bs';
 import { Form, Navbar, Button } from 'react-bootstrap';
 import AppContext from '../../context/AppContext';
 import MOCK_DATA from './jobs.json';
@@ -45,8 +46,8 @@ export const FilteringTable = () => {
 			) : (
 				<>
 					<Navbar bg='white' expand='lg'>
-						<Navbar.Collapse className='justify-content-left'>
-							<button className='back-button' onClick={goBack}>
+						<Navbar.Collapse className='justify-content-start'>
+							<button className='back-button' onClick={() => {}}>
 								<FaAngleDoubleLeft size={25} />
 							</button>
 						</Navbar.Collapse>
@@ -58,7 +59,7 @@ export const FilteringTable = () => {
 						</Navbar.Collapse>
 						<Navbar.Collapse className='justify-content-end'>
 							<button className='back-button' onClick={goBack}>
-								<FaDownload size={25} />
+								<BsDownload size={25} />
 							</button>
 						</Navbar.Collapse>
 					</Navbar>
