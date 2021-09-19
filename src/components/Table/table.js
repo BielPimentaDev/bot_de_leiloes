@@ -45,9 +45,11 @@ export const FilteringTable = () => {
 			) : (
 				<>
 					<Navbar bg='white' expand='lg'>
-						<button className='back-button' onClick={goBack}>
-							<FaAngleDoubleLeft size={25} />
-						</button>
+						<Navbar.Collapse className='justify-content-left'>
+							<button className='back-button' onClick={goBack}>
+								<FaAngleDoubleLeft size={25} />
+							</button>
+						</Navbar.Collapse>
 
 						<Navbar.Collapse className='justify-content-center'>
 							<label className='label-search'>
