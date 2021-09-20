@@ -4,10 +4,9 @@ import { Table } from 'react-bootstrap';
 import './table.css';
 import { useHistory } from 'react-router-dom';
 import { FaAngleDoubleLeft } from 'react-icons/fa';
-import { BsDownload } from 'react-icons/bs';
-import { Form, Navbar, Button } from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
 import AppContext from '../../context/AppContext';
-import MOCK_DATA from './jobs.json';
+import { ExportToExcel } from '../ExportToExcel/ExportToExcel';
 
 export const FilteringTable = () => {
 	// console.log("data",data)
@@ -21,10 +20,8 @@ export const FilteringTable = () => {
 	useEffect(() => {
 		async function fetchData() {
 			const results = await callApi();
-
-			console.log(results.data.data);
-
-			setData(results.data.data);
+			const json_data = results.data.data;
+			setData(json_data);
 			setLoading(false);
 		}
 
@@ -47,7 +44,7 @@ export const FilteringTable = () => {
 				<>
 					<Navbar bg='white' expand='lg'>
 						<Navbar.Collapse className='justify-content-start'>
-							<button className='back-button' onClick={() => {}}>
+							<button className='back-button' onClick={goBack}>
 								<FaAngleDoubleLeft size={25} />
 							</button>
 						</Navbar.Collapse>
@@ -58,9 +55,12 @@ export const FilteringTable = () => {
 							</label>
 						</Navbar.Collapse>
 						<Navbar.Collapse className='justify-content-end'>
-							<button className='back-button' onClick={goBack}>
+							<ExportToExcel apiData={data} fileName={getObject.state_city} />
+							{/* <button
+								className='back-button'
+								onClick={(e) => ExportToExcel(data, getObject.state_city)}>
 								<BsDownload size={25} />
-							</button>
+							</button> */}
 						</Navbar.Collapse>
 					</Navbar>
 
