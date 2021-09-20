@@ -7,7 +7,6 @@ import AppContext from './context/AppContext';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import { FilteringTable } from './components/Table/table';
-import MOCK_DATA from './components/Table/jobs.json';
 
 function App() {
 	const appContext = useContext(AppContext);

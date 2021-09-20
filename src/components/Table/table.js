@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import ClipLoader from 'react-spinners/ClipLoader';
-import { Table } from 'react-bootstrap';
+import { Table, Dropdown, DropdownButton } from 'react-bootstrap';
 import './table.css';
 import { useHistory } from 'react-router-dom';
 import { FaAngleDoubleLeft } from 'react-icons/fa';
@@ -9,10 +9,11 @@ import AppContext from '../../context/AppContext';
 import { ExportToExcel } from '../ExportToExcel/ExportToExcel';
 
 export const FilteringTable = () => {
-	// console.log("data",data)
-	// const [loading, setLoading] = useState(true);
 	const [loading, setLoading] = useState(true);
 	const [data, setData] = useState({});
+	const [filteredData, setFilteredData] = useState({});
+	const [dropdownData, setDropdownData] = useState({});
+	const [filter, setFilter] = useState('Categorias');
 
 	const appContext = useContext(AppContext);
 	const { callApi, getObject } = appContext;
@@ -22,17 +23,44 @@ export const FilteringTable = () => {
 			const results = await callApi();
 			const json_data = results.data.data;
 			setData(json_data);
+			setFilteredData(json_data);
+			const drop = newSetCategory(json_data);
+			setDropdownData(drop);
 			setLoading(false);
 		}
 
 		fetchData();
 	}, []);
 
+	function newSetCategory(items) {
+		var lookup = {};
+		var result = [];
+
+		for (var item, i = 0; (item = items[i++]); ) {
+			var name = item.category;
+
+			if (!(name in lookup)) {
+				lookup[name] = 1;
+				result.push(name);
+			}
+		}
+		return result.sort();
+	}
+
 	const history = useHistory();
 
 	function goBack() {
 		history.push('/');
 	}
+
+	const filterRedirect = function (category) {
+		var filtered = data.filter((item) => {
+			return item.category === category;
+		});
+		console.log(filtered);
+		setFilteredData(filtered);
+		setFilter(category);
+	};
 
 	return (
 		<>
@@ -56,13 +84,26 @@ export const FilteringTable = () => {
 						</Navbar.Collapse>
 						<Navbar.Collapse className='justify-content-end'>
 							<ExportToExcel apiData={data} fileName={getObject.state_city} />
-							{/* <button
-								className='back-button'
-								onClick={(e) => ExportToExcel(data, getObject.state_city)}>
-								<BsDownload size={25} />
-							</button> */}
 						</Navbar.Collapse>
 					</Navbar>
+
+					<DropdownButton
+						id='dropdown-basic-button'
+						title={filter}
+						className='text-center w-100 bg-orange'>
+						<Dropdown.Item
+							onClick={() => {
+								setFilteredData(data);
+								setFilter('Categorias');
+							}}>
+							-
+						</Dropdown.Item>
+						{dropdownData.map((item) => (
+							<Dropdown.Item key={item} onClick={() => filterRedirect(item)}>
+								{item}
+							</Dropdown.Item>
+						))}
+					</DropdownButton>
 
 					<div className='div-table'>
 						<Table className='table-fixed'>
@@ -87,7 +128,7 @@ export const FilteringTable = () => {
 								</tr>
 							</thead>
 							<tbody>
-								{data.map((row, i) => (
+								{filteredData.map((row, i) => (
 									<tr key={i}>
 										<td className='label-info'>{row.site}</td>
 
