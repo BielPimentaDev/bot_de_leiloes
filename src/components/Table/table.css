@@ -46,6 +46,8 @@
 	font-size: 45px;
 	color: #17a2b8;
 	font-weight: bold;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+		'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .td-button {
@@ -58,37 +60,38 @@
 	border-radius: 7px;
 	transition-duration: 0.4s;
 	cursor: pointer;
-	font-size: 15px;
+	font-size: 0.9rem;
+	font-weight: 500;
 }
 
 .td-button:hover {
 	background-color: white;
 	color: #f86440;
 	border: 1px solid #f86440;
-}
-
-.desc-wr {
-	/* max-height: 20px; */
-	/* max-width: 500px; */
-	/* overflow: hidden; */
-	/* text-overflow: ellipsis; */
-	/* white-space: nowrap; */
-}
-
-.table-fixed {
-	/* margin-left: 40px; */
-	/* margin-right: 40px; */
-	/* margin-top: 10rem; */
+	font-size: 0.9rem;
+	font-weight: 600;
 }
 
 .table-fixed thead,
 .table-fixed thead > th {
-	background: #17a2b8;
+	background: #17a2b7;
 	color: #fff;
 }
 
 .table-fixed tbody tr td {
-	background: #fff;
+	border-top: none;
+	padding: 10px;
+	color: #787878;
+	font-size: 0.9rem;
+	font-weight: 700;
+}
+
+/* .table-fixed tr:nth-child(even) {
+	background-color: #f0f0f0;
+} */
+
+.table-fixed tbody tr {
+	/* margin-bottom: 5px; */
 }
 
 .table-fixed > thead > tr > th {
@@ -103,7 +106,6 @@
 .table-fixed thead > tr > th {
 	float: left;
 	font-size: 14px;
-	/* padding-left: 20px !important; */
 }
 
 .table-fixed th,
@@ -126,8 +128,9 @@ th {
 	overflow-y: auto;
 }
 
-.table-fixed tr {
-	display: block;
+.table-fixed tbody tr {
+	display: flex;
+	font-size: 45px;
 }
 
 .div-table {

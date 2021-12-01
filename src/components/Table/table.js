@@ -70,7 +70,7 @@ export const FilteringTable = () => {
 				</div>
 			) : (
 				<>
-					<Navbar bg='white' expand='lg'>
+					<Navbar style={{ backgroundColor: '#F0F0F0' }} expand='lg'>
 						<Navbar.Collapse className='justify-content-start'>
 							<button className='back-button' onClick={goBack}>
 								<FaAngleDoubleLeft size={25} />
