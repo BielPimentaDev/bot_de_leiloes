@@ -4,7 +4,7 @@ import AppContext from './AppContext';
 
 const AppState = (props) => {
 	// const apiUrl = 'http://192.168.15.47:5000/';
-	const apiUrl = 'https://guiiialves.pythonanywhere.com/';
+	const apiUrl = 'http://marcelarocha.pythonanywhere.com/';
 	const [getObject, setGetObject] = useState({
 		state_city: '',
 	});
