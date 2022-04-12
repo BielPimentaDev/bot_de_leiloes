@@ -1,0 +1,31 @@
+.registerContainer{
+    margin: 25px auto;
+    width: 80%;
+    background-color: white;
+    padding: 30px;
+    border-radius: 7px;
+}
+.registerForm{
+    
+}
+
+.registerForm div{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.registerContainer h2{
+    text-align: center;
+}
+
+.registerBtn{
+    outline: none;
+    border: none;
+    background-color: #17A2B8;
+    color: white;
+    padding: 10px;
+    border-radius: 7px;
+    
+}

@@ -21,7 +21,7 @@ export const FilteringTable = () => {
 	useEffect(() => {
 		async function fetchData() {
 			const results = await callApi();
-			const json_data = results.data.data;
+			const json_data = results.data;
 			setData(json_data);
 			setFilteredData(json_data);
 			const drop = newSetCategory(json_data);
