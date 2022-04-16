@@ -1,53 +1,40 @@
 import {useState} from 'react'
 import axios from 'axios';
-import { Link } from 'react-router-dom'
+
+import { useForm } from "react-hook-form";
 
 import './Register.css'
 
 function Register() {
+    const { register, handleSubmit, watch, formState: { errors } } = useForm();    
     
-    
-    const [form, setForm] = useState({
-        name : '',
-        city : ''
-    })
-
-
-    const handleInputChange = (e)=>{
-        const {name, value} = e.target
-
-        setForm({
-            ...form,
-            [name]:value
-        })
-    }
-
-    const handleRegisterButton = (name,city)=>{
-        axios.get(`http://127.0.0.1:5000/register/${name}/${city}`)
+     function onSubmit(data){
+        axios.get(`http://127.0.0.1:5000/register/${data.name}/${data.place}`)
             .then(alert('Cadastro efetuado com sucesso!'))
             .catch(alert('Não foi possível fazer o cadastro'))
-        
-        
-    }
+     }
 
     return (
     
      
-    <section className="registerContainer">
-        <h2>Registro</h2>
+        <form className='mainHome' onSubmit={handleSubmit(onSubmit)}>
+            <section className='inputSection'>				
+                <input type="text" placeholder='Digite o nome do cliente...' name="name" {...register("name")}/>
+                <label className='labelSearch'>NOME:</label>
 
-        <form className="registerForm">
-            <div >
-                <label>Nome:</label>
-                <input value={form.name} name='name' type="text"placeholder="Digite seu nome..." onChange={handleInputChange}></input>
-            </div>
-            <div >
-                <label>Cidade ou Estado:</label>
-                <input value={form.city} name="city" type="text"placeholder="Digite o nome do lugar..." onChange={handleInputChange}></input>
-            </div>
-            <button className='registerBtn' onClick={()=> handleRegisterButton(form.name, form.city)} >Enviar</button>
+                
+            </section>
+            <br/><br/><br/><br/>
+
+            <section className='inputSection'>				
+                <input type="text" placeholder='Digite o lugar...' name="place" {...register("place")}/>
+                <label className='labelSearch'>LUGAR:</label>
+
+                
+            </section>
+        
+            <button type='submit'>ENVIAR</button>
         </form>
-    </section>
     );
 }
 

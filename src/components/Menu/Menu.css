@@ -1,0 +1,85 @@
+.menuContainer{
+    
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-2);
+    width: 20%;
+    height: 110%;
+    box-shadow: 17px 0px 9px 0px #00000040;
+    overflow: hidden;
+    flex: none;
+
+}
+
+.menuBtn{
+    width: 100%;
+    background-color: var(--color-1);
+    padding: 5px 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menuIcon{
+    font-size: 30px;
+    margin: 5px;
+    cursor: pointer;
+
+    
+}
+
+.menuPages{
+    
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin: 30% auto;
+}
+
+.menuPages span{
+    font-size: 30px;
+    margin-right: 10px;
+    transition: all 0.5s;
+}
+
+.menuPages li, .linkPage{
+    color: var(--color-1-less);
+}
+
+.linkPage{
+    position: relative;
+    padding: 0 40px;
+    font-weight: 300;
+    
+    
+}
+
+.linkPage::after{
+    content: '';
+    width: 100%;
+    transform: scaleX(0);
+    height: 4px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--color-1);
+    position: absolute;
+    transition: all 0.5s ;
+}
+
+.linkPage:hover::after{
+
+    transform: scaleX(1);
+}
+
+.menuPages li:hover, .linkPage:hover{
+    color: var(--color-1);
+    font-weight: 400;
+}
+
+
+.show{
+    width: 50px;
+}
+.show ul{
+    display: none;
+}

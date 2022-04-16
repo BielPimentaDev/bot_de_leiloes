@@ -10,8 +10,10 @@ const AppState = (props) => {
 	});
 
 	const callApi = async () => {
+		
 		try {
 			if (getObject.state_city !== '') {
+				console.log(getObject)
 				const results = await axios.get(`${apiUrl}/`, {
 					params: { state_city: getObject.state_city },
 				});

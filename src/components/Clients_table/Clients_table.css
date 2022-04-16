@@ -1,0 +1,86 @@
+.tableContainer{   
+    display: block; 
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 500px;
+    padding: 0 15px;
+    background-color: #F5F5F5;
+}
+
+.tableContent{
+    border-collapse: separate;
+    border-spacing: 0 15px;
+    width: 100%;    
+    text-align: center;  
+}
+
+
+.tableContent thead{    
+    line-height: 70px;      
+    position: sticky;
+    top: 0;
+    text-transform: uppercase;
+    font-size: 21px;
+    font-weight: 700;
+    background-color: #F5F5F5;
+    z-index: 2;
+}
+
+.tableContent tbody{
+    line-height: 80px;
+    background-color: white;
+    font-weight: 400;
+}
+
+.tableContent tbody tr{
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 10px gray;
+    transform: scale(1);
+}
+
+.tableContent tbody tr:hover{
+    z-index: 2;
+    transform: scale(1.03);
+    box-shadow: 3px 10px 15px rgb(70, 70, 70);
+}
+
+.linkBtn{
+    text-decoration: none;
+    color: var(--color-2);
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: 700;
+    
+    font-size: 15px;
+    transition: all 0.3s;
+}
+
+.linkBtn:hover{
+    background-color: var(--color-2);
+    color: var(--color-1);
+    
+}
+
+
+
+
+
+/* width */
+.tableContainer::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  /* Track */
+  .tableContainer::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  .tableContainer::-webkit-scrollbar-thumb {
+    background: rgba(146, 146, 146, 0.466); 
+    border-radius: 10px;
+  }
+  
+
+  

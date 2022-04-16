@@ -9,6 +9,7 @@ import AppContext from '../../context/AppContext';
 import { ExportToExcel } from '../ExportToExcel/ExportToExcel';
 
 export const FilteringTable = () => {
+
 	const [loading, setLoading] = useState(true);
 	const [data, setData] = useState({});
 	const [filteredData, setFilteredData] = useState({});
@@ -20,8 +21,9 @@ export const FilteringTable = () => {
 
 	useEffect(() => {
 		async function fetchData() {
+			
 			const results = await callApi();
-			const json_data = results.data;
+			const json_data = results.data.data;
 			setData(json_data);
 			setFilteredData(json_data);
 			const drop = newSetCategory(json_data);
@@ -66,7 +68,7 @@ export const FilteringTable = () => {
 		<>
 			{loading ? (
 				<div className='loading-screen'>
-					<ClipLoader size={150} color={'#fff'} loading={loading} />
+					<ClipLoader size={150} color={'#212529'} loading={loading} backgroundColor={'#F5F5F5'} />
 				</div>
 			) : (
 				<>
@@ -105,25 +107,25 @@ export const FilteringTable = () => {
 						))}
 					</DropdownButton>
 
-					<div className='div-table'>
-						<Table className='table-fixed'>
+					<div className="tableContainer">
+						<Table className='tableContent'>
 							<thead>
 								<tr>
 									<th>
 										Site
-										<br />
+										
 									</th>
 									<th>
 										Categoria
-										<br />
+										
 									</th>
 									<th>
 										Preço
-										<br />
+										
 									</th>
 									<th>
 										Link
-										<br />
+										
 									</th>
 								</tr>
 							</thead>
@@ -137,8 +139,7 @@ export const FilteringTable = () => {
 										<td className='label-info'>{row.price}</td>
 
 										<td>
-											<a href={row.url} target='_blank' title={row.description}>
-												<button className='td-button'>VISUALIZAR IMÓVEL</button>
+											<a href={row.url} target='_blank' style={{ textDecoration: 'none' }} title={row.description}className='act-button'>VISUALIZAR IMÓVEL
 											</a>
 										</td>
 									</tr>
