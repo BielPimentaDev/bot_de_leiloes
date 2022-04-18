@@ -7,7 +7,7 @@ function Header({name, subname}) {
             <header className='auctionHeader'>
                 <h2>{name}</h2>
                 <p>{subname}</p>
-                <div className='logoContainer'> <MdOutlineRoofing className='logoIcon'/>  <div><span className='logo'>A</span><span className='logo U'>U</span><span className='logo'>CTION</span></div></div>
+                <div className='logoContainer'> <MdOutlineRoofing className='logoIcon'/>  <div><span className='logo'>A</span><span className='logo U'>U</span><span className='logo'>CTIONS</span></div></div>
             </header>
         </>
         
