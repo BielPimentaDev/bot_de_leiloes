@@ -6,12 +6,14 @@ import { useForm } from "react-hook-form";
 import './Register.css'
 
 function Register() {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();    
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();    
     
      function onSubmit(data){
         axios.get(`http://127.0.0.1:5000/register/${data.name}/${data.place}`)
-            .then(alert('Cadastro efetuado com sucesso!'))
-            .catch(alert('Não foi possível fazer o cadastro'))
+            .then(response => console.log(response))
+            alert('Cliente cadastrado com sucesso!')
+            reset()
+            
      }
 
     return (

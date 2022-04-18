@@ -5,7 +5,8 @@ import Header from './components/Header/Header';
 import Clients_table from './components/Clients_table/Clients_table';
 import Auctions_clients from './components/Auctions_clients/Auctions_clients';
 import Auctions_table from './components/Auctions_table/Auctions_table';
-import AuctionClientMannager from './components/AuctionClientMannager/AuctionClientMannager';
+import ClientContext from './context/ClientContext';
+
 
 import { Form, Navbar, Button } from 'react-bootstrap';
 import './App.css';
@@ -19,7 +20,8 @@ import { FilteringTable } from './components/Table/table';
 
 
 function App() {
-	
+	const [value, setValue] = useState('Gabriel')
+	const [localValue, setLocalValue] = useState('Niterói')
 	
 	return (
 		<Router>
@@ -51,19 +53,7 @@ function App() {
 						</container>					
 				</Route>
 				
-				<Route path='/clients'>
-						<container className="appContainer">					
-							<Menu/>
-							<container className="mainApp">
-							<Header name="Clientes" subnamne = ''/>
-							<Clients_table/>
-							<div className='footer'>Created By Guilherme Alves Pimenta</div>
-							</container>
-							
-						</container>
-
-					
-				</Route>
+				
 				<Route path='/register'>
 						<container className="appContainer">					
 							<Menu/>
@@ -78,17 +68,31 @@ function App() {
 				</Route>
 
 				
-				<Route path='/client_local'>
-						<container className="appContainer">					
-							<Menu/>
-							<container className="mainApp">
-							<Header name="Clientes " subnamne = ''/>
-							<Auctions_clients name="Guilherme" local="São paulo" />
-							<div className='footer'>Created By Guilherme Alves Pimenta</div>
+				<ClientContext.Provider value = {{value,localValue, setValue, setLocalValue}}>
+					<Route path='/clients'>
+							<container className="appContainer">					
+								<Menu/>
+								<container className="mainApp">
+								<Header name="Clientes" subnamne = ''/>
+								<Clients_table/>
+								<div className='footer'>Created By Guilherme Alves Pimenta</div>
+								</container>
+								
+							</container>						
+					</Route>
+
+					<Route path='/client_local'>	
+
+							<container className="appContainer">					
+								<Menu/>
+								<container className="mainApp">
+									<Header name={value} subname = {localValue}/>
+									<Auctions_clients name='{clientName}' local='{clientLocal}' />
+									<div className='footer'>Created By Guilherme Alves Pimenta</div>
+								</container>							
 							</container>
-							
-						</container>
-				</Route>
+					</Route>
+				</ClientContext.Provider>
 
 				<Route path='/auctions'>
 						<container className="appContainer">					
@@ -102,17 +106,7 @@ function App() {
 						</container>
 				</Route>
 
-				<Route path="/teste">
-				<container className="appContainer">					
-							<Menu/>
-							<container className="mainApp">
-							<Header name="Clientes" subnamne = ''/>
-							<AuctionClientMannager/>
-							<div className='footer'>Created By Guilherme Alves Pimenta</div>
-							</container>
-							
-						</container>
-				</Route>
+				
 			</Switch>
 		</Router>
 	);

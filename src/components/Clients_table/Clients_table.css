@@ -83,4 +83,23 @@
   }
   
 
-  
+  .backIcon{
+      font-size: 40px;
+      color: var(--color-2);      
+      margin-bottom: 50px;
+      transition: all 0.5s;
+      border-radius: 50%;
+      opacity: 1;
+        
+    }
+
+  .backIcon:hover{
+      transform: scale(1.5);
+          
+
+  }
+
+ .backIcon:active{
+      transform: translateX(-100%);
+      opacity: 0;
+  }

@@ -1,20 +1,23 @@
 import './Clients_table.css'
 import axios from 'axios'
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom'
+import AppContext from '../../context/AppContext';
+import ClientContext from '../../context/ClientContext';
 
+function Clients_table() {   
 
+    const {value, setValue} = useContext(ClientContext)
+    const {localValue, setLocalValue} = useContext(ClientContext)
 
-function Clients_table() {
-    const [clientName, setClientName] = useState('')
-    const [clientLocal, setClientLocal] = useState('')
-
-    function setClientTable(name,local){
-        setClientName(name)
-        setClientLocal(local)
-        console.log(clientName,clientLocal)
+    function setTable(name, local){
+        setValue(name)
+        setLocalValue(local)
+        console.log(value)
+        console.log(name)
+        console.log(local)
+        
     }
-
     const [clients , setClients] = useState([])
     useEffect(( ()=>{
         
@@ -31,10 +34,13 @@ function Clients_table() {
     }
 
     ),[])
+
+    
     return ( 
         
-        
-                    <container className="tableContainer">
+                    
+                    <container className="tableContainer">                        
+                        
                         <table className='tableContent'>
                                                 <thead>
                                                     <tr>
@@ -53,7 +59,7 @@ function Clients_table() {
                                                                         <tr>
                                                                             <td name='clientName'>{client[1][0]}</td>
                                                                             <td name='clientLocal'>{client[1][1]}</td>
-                                                                            <td><button onClick={() =>setClientTable(client[1][0],client[1][1])} className='linkBtn'>Veja mais</button></td>
+                                                                            <td> <Link to="/client_local"> <div onClick={()=>{setTable(client[1][0],client[1][1])}} >Veja mais</ div> </Link></td>
                                                                         </tr>
                                                                      </>
                                                                  )
