@@ -3,8 +3,8 @@ import axios from 'axios';
 import AppContext from './AppContext';
 
 const AppState = (props) => {
-	const apiUrl = 'http://127.0.0.1:5000';
-	/* const apiUrl = 'https://marcelarocha.pythonanywhere.com'; */
+	 /*const apiUrl = 'http://127.0.0.1:5000';*/
+	const apiUrl = 'https://marcelarocha.pythonanywhere.com'; 
 	const [getObject, setGetObject] = useState({
 		state_city: '',
 	});
