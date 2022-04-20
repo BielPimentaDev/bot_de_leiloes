@@ -39,7 +39,8 @@
 }
 
 .tableContent tbody tr:hover{
-    z-index: 2;
+    background-color: white;
+    z-index: 3; 
     transform: scale(1.03);
     box-shadow: 3px 10px 15px rgb(70, 70, 70);
 }
