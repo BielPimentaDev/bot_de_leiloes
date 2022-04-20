@@ -13,10 +13,8 @@ function Auctions_clients({name, local}) {
     useEffect((()=>{
         
         
-        axios.get(`http://127.0.0.1:5000/clients_auction/${localValue}`)
-        .then(response => setClientsLocals(response.data))
-        console.log(`http://127.0.0.1:5000/clients_auction/${local}`)
-        console.log(clientsLocals)
+        axios.get(` http://marcelarocha.pythonanywhere.com/${localValue}`)
+        .then(response => setClientsLocals(response.data))       
     }),[])
     
     
