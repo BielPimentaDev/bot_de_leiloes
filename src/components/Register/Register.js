@@ -9,7 +9,7 @@ function Register() {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();    
     
      function onSubmit(data){
-        axios.get(`http://127.0.0.1:5000/register/${data.name}/${data.place}`)
+        axios.get(`https://marcelarocha.pythonanywhere.com/register/${data.name}/${data.place}`)
             .then(response => console.log(response))
             alert('Cliente cadastrado com sucesso!')
             reset()

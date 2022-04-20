@@ -21,7 +21,7 @@ function Clients_table() {
     const [clients , setClients] = useState([])
     useEffect(( ()=>{
         
-        axios.get('http://127.0.0.1:5000/clients')
+        axios.get('https://marcelarocha.pythonanywhere.com/clients')
             .then(response =>{
                 const datas = response.data
                 
