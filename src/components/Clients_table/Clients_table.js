@@ -21,19 +21,14 @@ function Clients_table() {
     const [clients , setClients] = useState([])
     useEffect(( ()=>{
         
-        axios.get(' http://marcelarocha.pythonanywhere.com/clients')
-
-            .then(response =>{
-                console.log(response)
-                const datas = response.data
-                
-                setClients(Object.entries(datas))
-                console.log(typeof(clients[1]))
-                
-                
-            })
         
-    }
+        axios.get('http://marcelarocha.pythonanywhere.com/clients')
+            .then(response =>{
+                console.log(response.data)                
+                const datas = response.data                
+                setClients(Object.entries(datas))           
+            })
+}
 
     ),[])
 
