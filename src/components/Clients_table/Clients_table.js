@@ -22,7 +22,9 @@ function Clients_table() {
     useEffect(( ()=>{
         
         axios.get(' http://marcelarocha.pythonanywhere.com/clients')
+
             .then(response =>{
+                console.log(response)
                 const datas = response.data
                 
                 setClients(Object.entries(datas))
