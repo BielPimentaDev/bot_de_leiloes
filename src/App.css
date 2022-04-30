@@ -84,8 +84,9 @@ table {
 
 .appContainer{
 	display: flex;
-	height: 100vh;
-	flex: 1;
+	height: 100%;
+	
+	
 }
 
 .mainApp{

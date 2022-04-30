@@ -34,7 +34,7 @@ function App() {
 							<container className="mainApp">
 							<Header name="Buscar"subnamne = ''/>
 							<Home/>					
-							<div className='footer'>Created By Guilherme Alves Pimenta</div>
+							<div className='footer'></div>
 							</container>
 							
 						</container>
@@ -48,7 +48,7 @@ function App() {
 							<container className="mainApp">
 							<Header name="Buscar" subnamne = ''/>
 							<FilteringTable />					
-							<div className='footer'>Created By Guilherme Alves Pimenta</div>
+							<div className='footer'></div>
 							</container>							
 						</container>					
 				</Route>
@@ -60,7 +60,7 @@ function App() {
 							<container className="mainApp">
 							<Header name="Registro"subnamne = "''"/>
 							<Register/>
-							<div className='footer'>Created By Guilherme Alves Pimenta</div>
+							<div className='footer'></div>
 							</container>
 							
 						</container>
@@ -75,7 +75,7 @@ function App() {
 								<container className="mainApp">
 								<Header name="Clientes" subnamne = ''/>
 								<Clients_table/>
-								<div className='footer'>Created By Guilherme Alves Pimenta</div>
+								<div className='footer'></div>
 								</container>
 								
 							</container>						
@@ -88,7 +88,7 @@ function App() {
 								<container className="mainApp">
 									<Header name={value} subname = {localValue}/>
 									<Auctions_clients name='{clientName}' local='{clientLocal}' />
-									<div className='footer'>Created By Guilherme Alves Pimenta</div>
+									<div className='footer'></div>
 								</container>							
 							</container>
 					</Route>
@@ -100,7 +100,7 @@ function App() {
 							<container className="mainApp">
 							<Header name="Leilões" subnamne = ''/>
 							<Auctions_table/>
-							<div className='footer'>Created By Guilherme Alves Pimenta</div>
+							<div className='footer'></div>
 							</container>
 							
 						</container>
