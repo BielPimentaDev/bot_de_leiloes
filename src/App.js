@@ -6,6 +6,8 @@ import Clients_table from './components/Clients_table/Clients_table';
 import Auctions_clients from './components/Auctions_clients/Auctions_clients';
 import Auctions_table from './components/Auctions_table/Auctions_table';
 import ClientContext from './context/ClientContext';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 
 import { Form, Navbar, Button } from 'react-bootstrap';
@@ -30,25 +32,38 @@ function App() {
 						
 						
 						<container className="appContainer">					
-							<Menu/>
 							<container className="mainApp">
-							<Header name="Buscar"subnamne = ''/>
+							<Header name=""subnamne = ''/>
 							<Home/>					
-							<div className='footer'></div>
+							<div className='footer'>
+								<span> © Gabriel Pimenta</span>
+								<div>
+								<a target="_blank" href='https://www.linkedin.com/in/gabriel-alves-pimenta-a2a944163/'><LinkedInIcon sx={{ fontSize: 40 }}/> </a>
+								<a  target="_blank" href='https://github.com/BielPimentaDev?tab=packages'><GitHubIcon sx={{ fontSize: 40 }}/></a>
+								</div>
+								</div>
 							</container>
-							
 						</container>
 
 
 				</Route>
-
 				<Route path='/results'>
 				<container className="appContainer">					
-							<Menu/>
+							
 							<container className="mainApp">
-							<Header name="Buscar" subnamne = ''/>
-							<FilteringTable />					
-							<div className='footer'></div>
+							<Header name="" subnamne = ''/>
+							<FilteringTable />	
+							<br/>				
+							<br/>				
+							<br/>				
+							<br/>				
+							<div className='footer'>
+								<span> © Gabriel Pimenta</span>
+								<div>
+								<a target="_blank" href='https://www.linkedin.com/in/gabriel-alves-pimenta-a2a944163/'><LinkedInIcon sx={{ fontSize: 40 }}/></a>
+								<a target="_blank" href='https://github.com/BielPimentaDev?tab=packages'><GitHubIcon sx={{ fontSize: 40 }}/></a>
+								</div>
+								</div>
 							</container>							
 						</container>					
 				</Route>

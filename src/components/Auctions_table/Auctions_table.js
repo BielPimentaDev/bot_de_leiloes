@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 function Auctions_table() {
     return ( <>
    <container className="tableContainer">
-                        <table className='tableContent'>
+                        <table className='tableContent'  style={{margin: 'auto', maxWidth:'1300px'}}>
                                                 <thead>
                                                     <tr>
                                                         <th>Site</th>

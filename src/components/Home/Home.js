@@ -1,6 +1,9 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom'
 import AppContext from '../../context/AppContext';
+import image from '../imgs/image.png'
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 
 import './Home.css'
@@ -17,14 +20,15 @@ function Home() {
 
 	return (
 		<form className='mainHome'>
-			<section className='inputSection'>				
-				<input type="text" placeholder=' Estado ou cidade...' name="place" value={getObject.state_city} onChange={handleInput('state_city')}/>
-				<label className='labelSearch'>PESQUISAR: </label>				
-			</section>
+			<img className = 'homeImage' src={image}/>
+			
+			<div className='homeButton'>
+			<TextField  style={{fontWeight: '900'}} fullWidth id="outlined-basic" label="Cidade" variant="outlined" name="place" value={getObject.state_city} onChange={handleInput('state_city')} />
+				<Link to='/results'>
+				<Button style={{width: '200px'}} variant="contained" size='large' type='submit'>BUSCAR</Button>
+				</Link>
+			</div>
 
-			<Link to='/results'>
-				<button type='submit'>ENVIAR</button>
-			</Link>
 		</form>
 	);
 }

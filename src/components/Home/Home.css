@@ -1,79 +1,37 @@
 .mainHome{
     display: flex;
-    flex-direction: column;
+    
     align-items: center;
     justify-content: center;
     align-content:center ;    
-    height: 60%;
-}
-
-
-.inputSection{
-    position: relative;
-    margin: 0 50px;
-    transform: translateX(25%);
-}
-
-
-.inputSection input{
-    outline: none;
-    text-align:center;
-    font-family: 'Poppins';
-    font-size: 18px;
-    background-color: #F0F0F0;
-    border: none;
-    border-bottom: 2px solid var(--color-2);
-    transition: all 0.2s;
-    transform: translateX(-25%);
-    
-    width: 600px;
-    
-    
-    
-}
-.inputSection input:focus{
-    -webkit-box-shadow: 0px 15px 16px -4px rgba(111,168,255,0.87);
-    -moz-box-shadow: 0px 15px 16px -4px rgba(111,168,255,0.87);
-    box-shadow: 0px 15px 16px -4px rgba(111,168,255,0.87);
-    text-align:left;
-    padding-left: 50px;
-    
-    
-}
-
-
-.inputSection label{
-    position: absolute;
-    top: -5px;
-    left: -100px;
-    z-index: 1;
-    font-weight: 600;
-    font-size: 20px;
-    transition: all 0.3s;
+    height: 70%;
+    width: 80%;
+    margin:50px auto;
 }
 
 
 
-.mainHome button{
-    margin-top: 100px;
-    background-color: var(--color-2);
-    border-radius: 11px;
-    outline: none;
-    border: none;
-    color: var(--color-1);
-    width: 300px;
-    height: 60px;
-    transform: scale(1);
-    transition: all 0.3s ease-in-out;
+
+
+
+
+
+.mainHome a{
+    text-decoration: none;
 }
 
-.inputSection input:focus  ~ .labelSearch{
-    top: -30px;
-    color: var(--color-2);
-    font-size:18px ;
+
+
+.homeButton{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    width:400px;
 }
 
-.mainHome button:hover{
-    transform: scale(1.1);
-    opacity: 0.9;
+.homeImage{
+    width:500px;
+    margin-right:30px;
 }

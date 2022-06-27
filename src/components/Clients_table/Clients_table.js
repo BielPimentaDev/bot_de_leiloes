@@ -13,10 +13,6 @@ function Clients_table() {
     function setTable(name, local){
         setValue(name)
         setLocalValue(local)
-        console.log(value)
-        console.log(name)
-        console.log(local)
-        
     }
     const [clients , setClients] = useState([])
     useEffect(( ()=>{
@@ -38,7 +34,7 @@ function Clients_table() {
                     
                     <container className="tableContainer">                        
                         
-                        <table className='tableContent'>
+                        <table className='tableContent' style={{margin: 'auto', maxWidth:'1300px'}}>
                                                 <thead>
                                                     <tr>
                                                         <th>Nome</th>

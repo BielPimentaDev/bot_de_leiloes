@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import ClipLoader from 'react-spinners/ClipLoader';
+
 import { Table, Dropdown, DropdownButton } from 'react-bootstrap';
 import './table.css';
 import { useHistory } from 'react-router-dom';
@@ -7,6 +7,8 @@ import { FaAngleDoubleLeft } from 'react-icons/fa';
 import { Navbar } from 'react-bootstrap';
 import AppContext from '../../context/AppContext';
 import { ExportToExcel } from '../ExportToExcel/ExportToExcel';
+
+import {FadeLoader} from "react-spinners"
 
 export const FilteringTable = () => {
 
@@ -23,7 +25,7 @@ export const FilteringTable = () => {
 		async function fetchData() {
 			
 			const results = await callApi();
-			const json_data = results.data.data;
+			const json_data = results?.data.data;
 			setData(json_data);
 			setFilteredData(json_data);
 			const drop = newSetCategory(json_data);
@@ -68,7 +70,10 @@ export const FilteringTable = () => {
 		<>
 			{loading ? (
 				<div className='loading-screen'>
-					<ClipLoader size={150} color={'#212529'} loading={loading} backgroundColor={'#F5F5F5'} />
+					<FadeLoader color='#5083D0'/>
+					<br/>
+					<br/>
+					<h1 style={{fontSize:'40px', fontWeight: 'bold'}} > Buscando... </h1>
 				</div>
 			) : (
 				<>

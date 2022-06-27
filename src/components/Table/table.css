@@ -29,6 +29,7 @@
 	text-align: center;
 	background-color: var(--color-back);
 	display: flex;
+	flex-direction:column;
 	justify-content: center;
 	align-items: center;
 	width: 100%;
